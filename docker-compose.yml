@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  postgesql:
+    image: postgres:latest
+    container_name: gorillamove
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=test_db
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+      # copy the sql script to create tables
+      # - ./migrations/01_create_initial_tables.up.sql:/docker-entrypoint-initdb.d/01_create_initial_tables.up.sql
+      # copy the sql script to fill tables
+      # - ./migrations/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
+    # networks:
+    #   - web_api

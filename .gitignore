@@ -4,6 +4,7 @@
 *.dll
 *.so
 *.dylib
+*.DS_Store
 
 # Test binary, built with `go test -c`
 *.test
@@ -12,4 +13,25 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+ vendor/
+ media
+
+# Config files
+config/apple_config_files
+/config/configs.env
+/config/config_file.go
+
+# Enviroment files
+envs/
+.env
+main
+.idea
+pgdata
+vendor
+
+# Avatars storage directory
+avatars/
+
+# config environment
+config.env
+tmp/
