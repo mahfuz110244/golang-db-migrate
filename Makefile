@@ -4,17 +4,16 @@
 # Go migrate postgresql
 
 force:
-	migrate -database postgres://postgres:postgres@localhost:5432/auth_db?sslmode=disable -path migrations force 1
+	migrate -database postgres://postgres:postgres@localhost:5432/example?sslmode=disable -path db/migrations force 1
 
 version:
-	migrate -database postgres://postgres:postgres@localhost:5432/auth_db?sslmode=disable -path migrations version
+	migrate -database postgres://postgres:postgres@localhost:5432/example?sslmode=disable -path db/migrations version
 
 migrate_up:
-	migrate -source db/migrations -database postgres://postgres:postgres@localhost:5432/example?sslmode=disable up
-	# migrate -database postgres://postgres:postgres@localhost:5432/test_db?sslmode=disable -path migrations up 1
+	migrate -database postgres://postgres:postgres@localhost:5432/example?sslmode=disable -path db/migrations up
 
 migrate_down:
-	migrate -database postgres://postgres:postgres@localhost:5432/auth_db?sslmode=disable -path migrations down 1
+	migrate -database postgres://postgres:postgres@localhost:5432/example?sslmode=disable -path db/migrations down
 
 
 # ==============================================================================
